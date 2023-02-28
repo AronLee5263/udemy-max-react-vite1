@@ -1,12 +1,16 @@
 import Post from "./Post";
+import NewPost from "./NewPost";
 import classes from "./PostList.module.css";
 
 function PostList() {
   return (
-    <ul className={classes.posts}>
-      <Post author="Maximiaan" body="the first props exercise!" />
-      <Post author="Manel" body="the second props pratice!" />
-    </ul>
+    <>
+      <NewPost />
+      <ul className={classes.posts}>
+        <Post author="Maximiaan" body="the first props exercise!" />
+        <Post author="Manel" body="the second props pratice!" />
+      </ul>
+    </>
   );
 }
 
