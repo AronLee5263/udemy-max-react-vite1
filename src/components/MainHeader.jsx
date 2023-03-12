@@ -7,12 +7,12 @@ function MainHeader({ onCreatePost }) {
     <header className={classes.header}>
       <h1 className={classes.logo}>
         <MdMessage />
-        React Poster
+        Twitter Clone App
       </h1>
       <p>
         <button className={classes.button} onClick={onCreatePost}>
           <MdPostAdd size={18} />
-          New Post
+          새로운 포스트
         </button>
       </p>
     </header>

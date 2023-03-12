@@ -20,10 +20,15 @@ function PostList({ isPosting, onStopPosting }) {
         </Modal>
       )}
       <ul className={classes.posts}>
-        {posts.map((post) => (
-          <Post author={post.author} body={post.body} />
-        ))}
+        {posts.length > 0 &&
+          posts.map((post) => <Post author={post.author} body={post.body} />)}
       </ul>
+      {posts.length === 0 && (
+        <div style={{ textAlign: "center", color: "white" }}>
+          <h2>포스트가 없습니다.</h2>
+          <p>여기에 내용을 추가해보세요 !</p>
+        </div>
+      )}
     </>
   );
 }
