@@ -29,7 +29,9 @@ function PostList({ isPosting, onStopPosting }) {
       )}
       <ul className={classes.posts}>
         {posts.length > 0 &&
-          posts.map((post) => <Post author={post.author} body={post.body} />)}
+          posts.map((post) => (
+            <Post key={post.body} author={post.author} body={post.body} />
+          ))}
       </ul>
       {posts.length === 0 && (
         <div style={{ textAlign: "center", color: "white" }}>
