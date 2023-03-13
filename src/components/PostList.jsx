@@ -14,6 +14,11 @@ function PostList({ isPosting, onStopPosting }) {
       setIsFetching(true);
       const response = await fetch("http://localhost:8080/posts");
       const resData = await response.json();
+      if (!response.ok) {
+        <div style={{ textAlign: "center", color: "white" }}>
+          <p>응답이 비정상적입니다...</p>
+        </div>;
+      }
       setPosts(resData.posts);
       setIsFetching(false);
     }
