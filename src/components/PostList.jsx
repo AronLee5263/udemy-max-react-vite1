@@ -14,6 +14,8 @@ function PostList({ isPosting, onStopPosting }) {
       const resData = await response.json();
       setPosts(resData.posts);
     }
+
+    fetchPosts();
   }, []);
 
   function addPostHandler(postData) {
