@@ -23,7 +23,7 @@ function PostList({ isPosting, onStopPosting }) {
       setIsFetching(false);
     }
 
-    fetchPosts();
+    //fetchPosts(); 주석처리 백엔드 컴포넌트 실행 취소
   }, []);
 
   function addPostHandler(postData) {
