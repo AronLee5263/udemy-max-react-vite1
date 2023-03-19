@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-
 import Post from "./Post";
-import NewPost from "./NewPost";
-import Modal from "./Modal";
 import classes from "./PostList.module.css";
 
-function PostList({ isPosting, onStopPosting }) {
+function PostList() {
   const [posts, setPosts] = useState([]);
   const [isFetchting, setIsFetching] = useState(false);
 
@@ -40,11 +37,6 @@ function PostList({ isPosting, onStopPosting }) {
 
   return (
     <>
-      {isPosting && (
-        <Modal onClose={onStopPosting}>
-          <NewPost onCancel={onStopPosting} onAddPost={addPostHandler} />
-        </Modal>
-      )}
       {!isFetchting && posts.length > 0 && (
         <ul className={classes.posts}>
           {posts.map((post) => (
