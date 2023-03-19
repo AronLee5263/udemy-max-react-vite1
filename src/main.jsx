@@ -11,15 +11,9 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    chlidren: [
-      {
-        path: "/",
-        element: <App />,
-      },
-      {
-        path: "/create-post",
-        element: <NewPost />,
-      },
+    children: [
+      { path: "/", element: <App /> },
+      { path: "/create-post", element: <NewPost /> },
     ],
   },
 ]);
