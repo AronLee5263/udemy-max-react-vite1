@@ -10,4 +10,4 @@ Node.js 설치가 되었다는 가정하에 아래 명령어들을 vscode 터미
 3. `npm install react-router-dom`
 
 
- 위의 모듈을 전부 설치 후 `npm run dev` 입력 하면 로컬 주소창이 나옵니다
+ 위의 모듈을 전부 설치 후 `npm run dev` 입력 하면 로컬 주소창이 나옵니다.
