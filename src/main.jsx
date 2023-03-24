@@ -15,7 +15,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Posts />,
+        element: (
+          <ErrorBoundary>
+            <Posts />
+          </ErrorBoundary>
+        ),
         loader: postsLoader,
         children: [{ path: "/create-post", element: <NewPost /> }],
       },
@@ -25,8 +29,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ErrorBoundary>
-      <RouterProvider router={router} />
-    </ErrorBoundary>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
