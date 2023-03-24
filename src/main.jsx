@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import ErrorBoundary from "./components/ErrorBoundary";
 import Posts, { loader as postsLoader } from "./routes/Posts";
 import NewPost from "./routes/NewPost";
 import RootLayout from "./routes/RootLayout";
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ErrorBoundary>
+      <RouterProvider router={router} />
+    </ErrorBoundary>
   </React.StrictMode>
 );
