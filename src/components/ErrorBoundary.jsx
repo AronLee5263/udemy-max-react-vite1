@@ -20,7 +20,19 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       /// 사용자 지정 폴백 UI를 렌더링할 수 있습니다
-      return <img src={fallbackImage} alt="fallback" />;
+      //   return <h1>Something went wrong.</h1>;
+      return (
+        <div
+          style={{
+            display: "flex-box",
+            textAlign: "center",
+            // justifyContent: "center",
+          }}
+        >
+          <h1 style={{ display: "block" }}>무언가 오류가 있어요.</h1>
+          <img src={fallbackImage} alt="fallback" />;
+        </div>
+      );
     }
 
     return this.props.children;

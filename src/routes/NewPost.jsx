@@ -26,7 +26,7 @@ function NewPost(props) {
 
   return (
     <Modal>
-      <form className={classes.form} onSubmit={submitHandlerat}>
+      <form className={classes.form} onSubmit={submitHandler}>
         <p>
           <label htmlFor="body">Text</label>
           <textarea id="body" required rows={3} onChange={bodyChangeHandler} />
