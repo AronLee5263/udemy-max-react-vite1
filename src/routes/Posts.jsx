@@ -19,5 +19,5 @@ export async function loader() {
   const response = await fetch("http://localhost:8080/posts");
   const resData = await response.json();
   console.log(resData);
-  return resData.Posts;
+  return resData.posts;
 }
