@@ -1,4 +1,4 @@
-import { Link, Form } from "react-router-dom";
+import { Link, Form, redirect } from "react-router-dom";
 
 import Modal from "../components/Modal";
 import classes from "./NewPost.module.css";
@@ -6,7 +6,7 @@ import classes from "./NewPost.module.css";
 function NewPost(props) {
   return (
     <Modal>
-      <Form className={classes.form}>
+      <Form method="post" className={classes.form}>
         <p>
           <label htmlFor="body">Text</label>
           <textarea id="body" name="body" required rows={3} />
@@ -27,3 +27,17 @@ function NewPost(props) {
 }
 
 export default NewPost;
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  const postData = Object.fromEntries(formData);
+  await fetch("http://localhost:8080/posts", {
+    method: "POST",
+    body: JSON.stringify(postData),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return redirect("/");
+}
