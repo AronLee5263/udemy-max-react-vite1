@@ -18,9 +18,9 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          // <ErrorBoundary>
-          <Posts />
-          // </ErrorBoundary>
+          <ErrorBoundary>
+            <Posts />
+          </ErrorBoundary>
         ),
         loader: postsLoader,
         children: [
